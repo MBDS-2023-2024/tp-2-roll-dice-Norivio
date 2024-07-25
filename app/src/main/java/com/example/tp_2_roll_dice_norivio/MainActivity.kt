@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val resultTextView: TextView = findViewById(R.id.txtDice)
         resultTextView.text = diceRoll.toString()
 
-        var resulTextView2: TextView = findViewById(R.id.txtDice2)
+        val resulTextView2: TextView = findViewById(R.id.txtDice2)
         resulTextView2.text = diceRoll2.toString()
 
         if(diceRoll == diceRoll2){
