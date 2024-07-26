@@ -2,6 +2,7 @@ package com.example.tp_2_roll_dice_norivio
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,10 +38,27 @@ class MainActivity : AppCompatActivity() {
         val resulTextView2: TextView = findViewById(R.id.txtDice2)
         resulTextView2.text = diceRoll2.toString()
 
-        if(diceRoll == diceRoll2){
+        val resultDiceInput: EditText = findViewById(R.id.diceNumber)
+
+        // Récupérer les valeurs des EditText
+        val value1 = resultTextView.text.toString()
+        val value2 = resulTextView2.text.toString()
+        val value3 = resultDiceInput.text.toString()
+
+        // Convertir les valeurs en Int
+        val diceNumb1 = value1.toLong()
+        val diceNumb2 = value2.toLong()
+        val diceNumb3 = value3.toLong()
+
+        val sumDice = diceNumb1 + diceNumb2
+
+
+        if(diceRoll == diceRoll2 || sumDice == diceNumb3){
             val toast = Toast.makeText(this, "Félicitation! Vous avez gagné", Toast.LENGTH_SHORT)
             toast.show()
         }
+
+        resultDiceInput.text.clear()
     }
 }
 
